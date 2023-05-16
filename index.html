@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      /*vh fixer, useful for webviews and viewports related*/
+      
+html {
+  height: -webkit-fill-available;
+  margin: 0%;
+}
+      body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow: hidden; /* Hide scrollbars */
+  margin: 0%;
+}
+.gb-infScrollContainer {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+.gb-infScrollItem {
+  display: inline-block;
+  -webkit-app-region: no-drag;
+}
+.gb-infScrollContainer::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+    height: 3px;
+    -webkit-app-region: no-drag;
+  }
+
+  .gb-infScrollContainer::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color of the scrollbar track */
+    -webkit-app-region: no-drag;
+  }
+
+  .gb-infScrollContainer::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 3px; /* Border radius of the scrollbar thumb */
+    -webkit-app-region: no-drag;
+  }
+  
+    </style>
+  </head>
+  <body>
+    <script
+			  src="https://code.jquery.com/jquery-3.7.0.js"
+			  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+			  crossorigin="anonymous"
+        name="JQUERY-PREBUILT"></script>
+        <script type="module">
+          
+    const wv = document.getElementById("view");
+    wv.addEventListener('dom-ready', () => {
+    const devtoolsView = document.getElementById('DevTools');
+    const browser = wv.getWebContents();
+    browser.setDevToolsWebContents(devtoolsView.getWebContents());
+    browser.openDevTools();
+});
+        </script>
+        <header style="margin: 0%; -webkit-app-region: drag; background-color:#2f3241; height: 30px; color:white; line-height:30px;" class="gb-infScrollContainer"><img src="factory/system/resources/images/logo.ico" style="
+          width:20px; height:20px; margin-top: 6px; margin-left: 6px"/>
+        </header>
+    <header style="margin: 0%; -webkit-app-region: drag; background-color:#2f3241; height: 30px; color:white; line-height:30px;" class="gb-infScrollContainer"><img src="factory/system/resources/images/logo.ico" style="
+      width:20px; height:20px; margin-top: 6px; margin-left: 6px" class="gb-infScrollItem"/>
+      <a class="gb-infScrollContainer">
+      <a class="gb-infScrollItem" style="border-style: solid; border-color: green; border-radius:10px">searchEngine: Google</a>
+      <button class= "gb-infScrollItem" style="border-style: solid; border-color: red; border-radius:10px; background-color:rgb(255, 255, 255);">Hi</button>
+      </a>
+    </header>
+    <webview id="view" class="page" style="width: 100%; height: 96vh; overflow: visible" src="https://www.google.com/"></webview>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+    <meta name="viewport" content="width=device-width">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <script>
+    
+    </script>
+</html>

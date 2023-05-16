@@ -1,0 +1,14 @@
+{
+    "tabs":{
+     "1": {
+    "tab": "startTab",
+    "onlink": "cube://webstart"
+     }
+    },
+    "tabsProperties": {
+    "tabsLength": 1,
+    "forRecovery": {
+    "currentTab": ""
+    }
+    }
+}
